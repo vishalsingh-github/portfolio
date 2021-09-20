@@ -1,0 +1,110 @@
+@import "../../global.scss";
+
+.intro {
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left {
+    flex: 0.6;
+    overflow: hidden;
+
+    .imageContainer {
+      width: 700px;
+      height: 700px;
+      background-color: rgb(201, 73, 22);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      @include mobile {
+        width: 340px;
+        height: 340px;
+        align-items: flex-end;
+      }
+      img {
+        width: 80%;
+        @include mobile {
+          height: 88%;
+          width: 92%;
+          margin-left: 22px;
+        }
+      }
+    }
+  }
+  .right {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex: 0.5;
+    justify-content: center;
+    .wrapper {
+      overflow: hidden;
+      width: 100%;
+      height: auto;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include mobile {
+        padding-left: 0;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin: 5px 0px;
+        font-weight: 800;
+
+        @include mobile {
+          font-size: 40px;
+        }
+      }
+      h2 {
+        font-size: 35px;
+        font-weight: 300;
+      }
+      h3 {
+        font-size: 30px;
+        @include mobile {
+          font-size: 20px;
+        }
+        span {
+          font-size: inherit;
+          color: rgb(201, 73, 22);
+        }
+        .ityped-cursor {
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    a {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+
+      img {
+        width: 30px;
+        height: 30px;
+        animation: arrowBlink 1s infinite;
+      }
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
